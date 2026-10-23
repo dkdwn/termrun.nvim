@@ -49,11 +49,20 @@ function M.run()
 
     vim.fn.termopen(command, {
         on_exit = function(_, exit_code)
-            vim.schedule(function()
-                if exit_code == 0 and vim.api.nvim_win_is_valid(win) then
-                    vim.api.nvim_win_close(win, true)
-                end
-            end)
+            if exit_code == 0 then
+                vim.defer_fn(function()
+                    if vim.api.nvim_win_is_valid(win) then
+                        vim.api.nvim_win_close(win, true)
+                    end
+                end, 3000)
+            else
+                vim.schedule(function()
+                    vim.notify(
+                        "TermRun: Process exited with code " .. exit_code,
+                        vim.log.levels.ERROR
+                    )
+                end)
+            end
         end,
     })
 
