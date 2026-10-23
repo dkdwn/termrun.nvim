@@ -5,7 +5,7 @@ termrun.nvim is a neovim plugin that allows developers to run some compilation c
 ## Example
 
 <p align="center">
-  <img src="assets/demo.png" alt="termrun.nvim demo" width="750">
+  <img src="demo.png" alt="termrun.nvim demo" width="750">
 </p>
 
 ## Installation
