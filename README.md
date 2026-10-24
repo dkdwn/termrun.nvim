@@ -30,6 +30,10 @@ return {
 
 You can see for example `c = "make"`, you can change it as you want, same for others languages.
 
+## Start
+
+In a file with a configured filetype run `:Compile`, it will open the floating terminal with the compilation.
+
 ## Thanks
 
 Thanks to all contributor and users • Made with passion by [@DankDown10256](https://github.com/DankDown10256)
